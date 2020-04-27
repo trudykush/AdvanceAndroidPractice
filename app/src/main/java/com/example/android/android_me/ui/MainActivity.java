@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
     @Override
     public void onImageSelected(int position) {
-        Toast.makeText(this, "Position = " + position, Toast.LENGTH_SHORT).show();
 
         int bodyPartNumber = position / 12;
 
