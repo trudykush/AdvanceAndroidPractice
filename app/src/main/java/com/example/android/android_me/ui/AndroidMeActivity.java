@@ -35,6 +35,9 @@ public class AndroidMeActivity extends AppCompatActivity {
             BodyPartFragment headfragment = new BodyPartFragment();
             headfragment.setmImageIds(AndroidImageAssets.getHeads());
 
+            int headIndex = getIntent().getIntExtra("headIndex", 0);
+            headfragment.setmListIndex(headIndex);
+
             //Use a fragmentManager and transaction to add the fragment to the screen
             FragmentManager fragmentManager = getSupportFragmentManager();
 
@@ -45,12 +48,16 @@ public class AndroidMeActivity extends AppCompatActivity {
 
             BodyPartFragment bodyFragment = new BodyPartFragment();
             bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
+            int bodyIndex = getIntent().getIntExtra("bodyIndex", 0);
+            bodyFragment.setmListIndex(bodyIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.body_container, bodyFragment)
                     .commit();
 
             BodyPartFragment legFragment = new BodyPartFragment();
             legFragment.setmImageIds(AndroidImageAssets.getLegs());
+            int legIndex = getIntent().getIntExtra("legIndex", 0);
+            legFragment.setmListIndex(legIndex);
             fragmentManager.beginTransaction()
                     .add(R.id.leg_container, legFragment)
                     .commit();
